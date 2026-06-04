@@ -1351,13 +1351,13 @@ ul { list-style: none; }
   }
 
   .logo-text strong {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.1;
     white-space: normal;
   }
 
   .logo-text span {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.1;
     white-space: normal;
   }
