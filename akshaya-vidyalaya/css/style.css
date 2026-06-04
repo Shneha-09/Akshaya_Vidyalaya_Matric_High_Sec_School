@@ -1256,3 +1256,79 @@ ul { list-style: none; }
   background: #ffffff !important;
   padding: 10px !important;
 }
+
+/* MOBILE RESPONSIVE FIX */
+@media (max-width: 768px) {
+  .topbar {
+    display: none;
+  }
+
+  .nav-inner {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    min-width: auto;
+    margin-left: 0;
+  }
+
+  .logo img {
+    width: 55px;
+  }
+
+  .logo-text strong {
+    font-size: 16px;
+  }
+
+  .logo-text span {
+    font-size: 13px;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-slide {
+    min-height: auto;
+  }
+
+  .hero-slide-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 45px 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+    margin: 0 auto 25px;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .hero-image {
+    display: block;
+    width: 100%;
+  }
+
+  .hero-image img {
+    max-height: none;
+    width: 100%;
+  }
+
+  .features-row,
+  .campus-grid,
+  .academics-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

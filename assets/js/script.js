@@ -1,0 +1,1 @@
+document.querySelector('.menu-btn')?.addEventListener('click',()=>document.querySelector('.menu').classList.toggle('active'));const topBtn=document.getElementById('top');window.addEventListener('scroll',()=>{topBtn.style.display=scrollY>300?'block':'none'});topBtn?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
