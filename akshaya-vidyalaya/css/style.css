@@ -1332,33 +1332,49 @@ ul { list-style: none; }
     grid-template-columns: 1fr;
   }
 }
-/* MOBILE LOGO FIX */
+/* FINAL FIX - MOBILE SCHOOL NAME */
 @media (max-width: 768px) {
+  .header {
+    overflow: hidden !important;
+  }
+
+  .nav-inner {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: 10px !important;
+  }
 
   .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 8px !important;
+    overflow: hidden !important;
   }
 
   .logo img {
-    width: 50px;
-    height: auto;
+    width: 55px !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
   }
 
   .logo-text {
-    max-width: 180px;
+    max-width: 220px !important;
+    overflow: hidden !important;
   }
 
   .logo-text strong {
-    font-size: 11px;
-    line-height: 1.1;
-    white-space: normal;
+    font-size: 15px !important;
+    line-height: 1.1 !important;
+    white-space: normal !important;
+    letter-spacing: 0 !important;
   }
 
   .logo-text span {
-    font-size: 9px;
-    line-height: 1.1;
-    white-space: normal;
+    font-size: 12px !important;
+    line-height: 1.1 !important;
+    white-space: normal !important;
+    letter-spacing: 0 !important;
   }
 }
