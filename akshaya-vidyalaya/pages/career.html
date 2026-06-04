@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Careers – Join Akshaya Vidyalaya Matric Hr. Sec. School, Dindigul." />
+  <title>Careers – Akshaya Vidyalaya MHSS</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../images/logo.png" />
+</head>
+<body>
+
+<div id="av-header"></div>
+
+<section class="page-header">
+  <div class="container">
+    <div class="page-header-inner">
+      <h1>Career Form</h1>
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <span>Careers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="career-intro reveal">
+      <span class="tag">Join Our Team</span>
+      <h2 class="section-title">Build Your Career With Us</h2>
+      <p>We are always on the lookout for passionate, dedicated and qualified educators and support staff who share our vision of providing quality education. If you believe you can make a difference, we'd love to hear from you.</p>
+    </div>
+
+    <!-- Why Join Cards -->
+    <div class="features-row reveal" style="margin-bottom:60px;">
+      <div class="feature-card animate-up delay-1">
+        <div style="font-size:36px;margin-bottom:14px;">🎓</div>
+        <h3>Qualified Faculty</h3>
+        <p>We seek B.Ed/M.Ed qualified teachers with strong subject knowledge and a passion for student development.</p>
+      </div>
+      <div class="feature-card animate-up delay-2">
+        <div style="font-size:36px;margin-bottom:14px;">🌿</div>
+        <h3>Inspiring Environment</h3>
+        <p>Work on a peaceful 25-acre green campus that fosters creativity, discipline and professional growth.</p>
+      </div>
+      <div class="feature-card animate-up delay-3">
+        <div style="font-size:36px;margin-bottom:14px;">🏆</div>
+        <h3>Growth Opportunities</h3>
+        <p>Regular training, workshops and career development programs to keep you updated with the latest in education.</p>
+      </div>
+    </div>
+
+    <!-- Career Form -->
+    <div style="max-width:800px;margin:0 auto;" class="reveal">
+      <div class="contact-form-wrap">
+        <h3>Apply for a Position</h3>
+        <p style="color:var(--text-light);font-size:14px;margin-bottom:24px;">Fill in the details below and our HR team will get back to you shortly.</p>
+        <form id="careerForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cfname">Full Name *</label>
+              <input type="text" id="cfname" name="cfname" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="cdob">Date of Birth</label>
+              <input type="date" id="cdob" name="cdob" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cemail">Email Address *</label>
+              <input type="email" id="cemail" name="cemail" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="cphone">Phone Number *</label>
+              <input type="tel" id="cphone" name="cphone" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cposition">Position Applied For *</label>
+              <select id="cposition" name="cposition" required>
+                <option value="">Select position</option>
+                <option value="teacher-primary">Primary School Teacher</option>
+                <option value="teacher-secondary">Secondary School Teacher</option>
+                <option value="teacher-hsc">Higher Secondary Teacher</option>
+                <option value="lab-assistant">Lab Assistant</option>
+                <option value="sports-coach">Sports Coach</option>
+                <option value="admin">Administrative Staff</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="csubject">Subject Specialization</label>
+              <input type="text" id="csubject" name="csubject" placeholder="e.g. Mathematics, Science, English" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cqualification">Highest Qualification</label>
+            <input type="text" id="cqualification" name="cqualification" placeholder="e.g. M.Sc., B.Ed." />
+          </div>
+          <div class="form-group">
+            <label for="cexperience">Years of Experience</label>
+            <input type="text" id="cexperience" name="cexperience" placeholder="e.g. 5 years" />
+          </div>
+          <div class="form-group">
+            <label for="cmessage">Cover Letter / Message</label>
+            <textarea id="cmessage" name="cmessage" placeholder="Tell us why you want to join Akshaya Vidyalaya…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Submit Application</button>
+        </form>
+        <p style="font-size:12px;color:var(--text-light);margin-top:12px;text-align:center;">Applications are reviewed on a rolling basis. Only shortlisted candidates will be contacted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="av-footer"></div>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  const careerForm = document.getElementById('careerForm');
+  if (careerForm) {
+    careerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = careerForm.querySelector('button[type="submit"]');
+      btn.textContent = 'Submitting…'; btn.disabled = true;
+      setTimeout(function() {
+        btn.textContent = '✓ Application Submitted!';
+        btn.style.background = '#1e8449';
+        careerForm.reset();
+        setTimeout(function() { btn.textContent = 'Submit Application'; btn.style.background = ''; btn.disabled = false; }, 3500);
+      }, 1600);
+    });
+  }
+</script>
+</body>
+</html>

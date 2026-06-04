@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gallery – Akshaya Vidyalaya Matric Hr. Sec. School, Dindigul." />
+  <title>Gallery – Akshaya Vidyalaya MHSS</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../images/logo.png" />
+  <style>
+    .gallery-full { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    @media(max-width:768px){ .gallery-full { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:480px){ .gallery-full { grid-template-columns:1fr; } }
+    .lightbox-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column; }
+    .lightbox-overlay.open { display:flex; }
+    .lightbox-overlay img { max-width:90vw;max-height:80vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5); }
+    .lightbox-close { position:absolute;top:20px;right:20px;background:var(--accent);color:white;border:none;width:40px;height:40px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center; }
+    .lightbox-caption { color:white;font-size:16px;margin-top:16px;font-weight:600; }
+    .lightbox-nav { position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);color:white;border:none;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition); }
+    .lightbox-nav:hover { background:var(--accent); }
+    .lightbox-prev { left:20px; }
+    .lightbox-next { right:20px; }
+  </style>
+</head>
+<body>
+
+<div id="av-header"></div>
+
+<section class="page-header">
+  <div class="container">
+    <div class="page-header-inner">
+      <h1>School Gallery</h1>
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <span>Gallery</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div style="text-align:center;max-width:600px;margin:0 auto 40px;">
+      <span class="tag">Memories &amp; Moments</span>
+      <h2 class="section-title">Life at Akshaya Vidyalaya</h2>
+      <p style="color:var(--text-light);">Browse through photos from our vibrant events, celebrations, cultural activities and campus life.</p>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="gallery-cats" style="justify-content:center;margin-bottom:36px;">
+      <a href="#" class="gallery-cat active" data-filter="all">All</a>
+      <a href="#" class="gallery-cat" data-filter="events">Events</a>
+      <a href="#" class="gallery-cat" data-filter="culture">Cultural</a>
+      <a href="#" class="gallery-cat" data-filter="campus">Campus</a>
+      <a href="#" class="gallery-cat" data-filter="sports">Sports</a>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-full" id="galleryGrid">
+      <div class="gallery-item reveal" data-category="culture" data-caption="World Environment Day Celebration">
+        <img src="../images/world_environment_day_celebration.png" alt="World Environment Day" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>World Environment Day Celebration</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="culture" data-caption="Colouring Activity">
+        <img src="../images/colouring_activity.png" alt="Colouring Activity" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>Colouring Activity</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="events" data-caption="Christmas Celebration">
+        <img src="../images/christmas_celebration.png" alt="Christmas Celebration" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>Christmas Celebration</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="culture" data-caption="Blue Day">
+        <img src="../images/blue day.png" alt="Blue Day" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>Blue Day</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="culture" data-caption="Craft Work">
+        <img src="../images/craftwork.png" alt="Craft Work" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>Craft Work</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="campus" data-caption="Infrastructure">
+        <img src="../images/infrastructure.png" alt="Infrastructure" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>Infrastructure</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="events" data-caption="Onam Celebration">
+        <img src="../images/onam.png" alt="Onam" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>Onam Celebration</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="events" data-caption="Christmas Events">
+        <img src="../images/christmas.png" alt="Christmas" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>Christmas Events</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="events" data-caption="School Events">
+        <img src="../images/event.png" alt="Events" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>School Events</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="culture" data-caption="Food Festival">
+        <img src="../images/a-12.png" alt="Food Festival" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>Food Festival</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="campus" data-caption="Coffee Day">
+        <img src="../images/a-13.png" alt="Coffee Day" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>Coffee Day</h4></div>
+      </div>
+      <div class="gallery-item reveal" data-category="sports" data-caption="Sports Day">
+        <img src="../images/images.jpg" alt="Sports Day" onerror="this.src='../images/placeholder.jpg'" />
+        <div class="gallery-overlay"><h4>Sports Day</h4></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
+  <img src="" alt="" id="lightboxImg" />
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
+</div>
+
+<div id="av-footer"></div>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  // Gallery filter
+  document.querySelectorAll('.gallery-cat').forEach(function(cat) {
+    cat.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelectorAll('.gallery-cat').forEach(c => c.classList.remove('active'));
+      cat.classList.add('active');
+      const filter = cat.dataset.filter;
+      document.querySelectorAll('.gallery-item').forEach(function(item) {
+        item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+      });
+    });
+  });
+
+  // Lightbox
+  const items = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  let currentIdx = 0;
+
+  items.forEach(function(item, i) {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', function() {
+      currentIdx = i;
+      openLightbox(i);
+    });
+  });
+
+  function openLightbox(i) {
+    const img = items[i].querySelector('img');
+    const caption = items[i].dataset.caption || '';
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent = caption;
+    lightbox.classList.add('open');
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    lightbox.classList.remove('open');
+  });
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+  document.getElementById('lightboxPrev').addEventListener('click', function(e) {
+    e.stopPropagation();
+    currentIdx = (currentIdx - 1 + items.length) % items.length;
+    openLightbox(currentIdx);
+  });
+  document.getElementById('lightboxNext').addEventListener('click', function(e) {
+    e.stopPropagation();
+    currentIdx = (currentIdx + 1) % items.length;
+    openLightbox(currentIdx);
+  });
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft') { currentIdx = (currentIdx - 1 + items.length) % items.length; openLightbox(currentIdx); }
+    if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % items.length; openLightbox(currentIdx); }
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+</script>
+</body>
+</html>
